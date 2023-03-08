@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 import { CharacterService } from 'src/app/services/character.service';
 import type { Character, characterChangeEvent } from 'src/types';
+import { normalizeName } from 'src/app/utils';
 
 @Component({
 	selector: 'edit-character',
@@ -125,7 +126,7 @@ export class EditCharacterComponent {
 			this.selectedAvatar = changes['character'].currentValue.id;
 			this.selectedMidichlorian =
 				changes['character'].currentValue.force.midichlorian;
-			this.selectedName = changes['character'].currentValue.name;
+			this.selectedName = normalizeName(changes['character'].currentValue.name);
 			this.selectedDescription =
 				changes['character'].currentValue.description;
 		}
