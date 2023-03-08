@@ -1,0 +1,91 @@
+<div class="modules">
+	<section *ngIf="showModal" class="modules__select-characters">
+		<div role="dialog" class="modules__select-characters__modal">
+			<div class="modules__select-characters__modal__wrapper">
+				<div class="modules__select-characters__modal__wrapper__side">
+					<span>Sötét oldal</span>
+					<div
+						class="modules__select-characters__modal__wrapper__side__container"
+					>
+						<img
+							(click)="selectedDark = character"
+							class="modules__select-characters__modal__wrapper__side__container__item"
+							*ngFor="let character of darkCharacters"
+							[class]="
+								character === selectedDark
+									? 'modules__select-characters__modal__wrapper__side__container__item--selected-dark'
+									: ''
+							"
+							[src]="
+								'/assets/images/characters/' +
+								character.id +
+								'.png'
+							"
+							alt="selected dark character"
+						/>
+					</div>
+				</div>
+				<div class="modules__select-characters__modal__wrapper__side">
+					<span>Világos oldal</span>
+					<div
+						class="modules__select-characters__modal__wrapper__side__container"
+					>
+						<img
+							(click)="selectedLight = character"
+							class="modules__select-characters__modal__wrapper__side__container__item"
+							*ngFor="let character of lightCharacters"
+							[class]="
+								character === selectedLight
+									? 'modules__select-characters__modal__wrapper__side__container__item--selected-light'
+									: ''
+							"
+							[src]="
+								'/assets/images/characters/' +
+								character.id +
+								'.png'
+							"
+							alt="selected dark character"
+						/>
+					</div>
+				</div>
+			</div>
+            <p *ngIf="error" class="modules__select-characters__modal__error">{{ error }}</p>
+            <div class="modules__select-characters__modal__buttons">
+                <base-button variant="secondary-black" (click)="showModal = false">Mégsem</base-button>
+                <base-button (click)="selectCharacters()">Kiválasztás</base-button>
+            </div>
+		</div>
+	</section>
+
+	<h3>Modulok</h3>
+	<div class="modules__columns">
+		<span class="modules__columns__1">Szimuláció</span>
+		<div class="modules__columns__2">
+			<span>Válassz két karaktert ellentéts oldalakról</span>
+			<div class="modules__columns__2__buttons">
+				<base-button (click)="showCharacterModal()" variant="secondary"
+					>Karakter kiválasztása</base-button
+				>
+				<base-button
+					(click)="simulate()"
+					*ngIf="selectedDark && selectedLight"
+					>Küzdelem indítása</base-button
+				>
+			</div>
+		</div>
+	</div>
+	<div class="modules__divider"></div>
+	<div class="modules__columns">
+		<span class="modules__columns__1">CRUD kezelés</span>
+		<div class="modules__columns__2">
+			<span>Karakterszerkesztő megnyitása</span>
+			<div class="modules__columns__2__buttons">
+				<a routerLink="/edit">
+					<base-button variant="secondary"
+						>Karakterek szerkesztése</base-button
+					>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>

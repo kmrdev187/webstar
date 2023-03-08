@@ -1,0 +1,31 @@
+<section class="fight-page">
+    <h1>{{ hasWinner ? 'A csata nyertese' : 'A tudás legyen veled!' }}</h1>
+    <div class="fight-page__wrapper">
+
+        <div class="fight-page__wrapper__character fight-page__wrapper__character--dark">
+            <span class="fight-page__wrapper__character__side">Sötét oldal</span>
+            <div class="fight-page__wrapper__character__container">
+                <img [src]="'/assets/images/characters/' + darkCharacter.id + '.png'" alt="character of dark side">
+                <div class="fight-page__wrapper__character__container__circle"></div>
+            </div>
+            <span class="fight-page__wrapper__character__name">{{ darkCharacter.name }}</span>
+            <progress-bar type="dark" [value]="darkCharacter.health" />
+        </div>
+
+        <h2>VS</h2>
+
+        <div class="fight-page__wrapper__character fight-page__wrapper__character--light">
+            <span class="fight-page__wrapper__character__side">Világos oldal</span>
+            <div class="fight-page__wrapper__character__container">
+                <img [src]="'/assets/images/characters/' + lightCharacter.id + '.png'" alt="character of light side">
+                <div class="fight-page__wrapper__character__container__circle"></div>
+            </div>
+            <span class="fight-page__wrapper__character__name">{{ lightCharacter.name }}</span>
+            <progress-bar type="light" [value]="lightCharacter.health" />
+        </div>
+
+        <a *ngIf="hasWinner" routerLink="/">
+            <base-button>Vissza a fedélzetre</base-button>
+        </a>
+    </div>
+</section>

@@ -1,0 +1,118 @@
+<section class="edit-page">
+	<edit-character
+		[index]="selectedCharacterIndex"
+		[character]="characterForEdit"
+		(characterChanged)="handleCharacterChange($event)"
+		[(show)]="showEdit"
+	></edit-character>
+	<div class="edit-page__nav">
+		<a routerLink="/" class="edit-page__nav__back">
+			<icon-chevron></icon-chevron>
+			karakterek szerkesztése
+		</a>
+		<base-button (click)="createCharacter()" variant="secondary"
+			>Új karakter hozzáadása</base-button
+		>
+	</div>
+	<div role="table" class="edit-page__table">
+		<div class="edit-page__table__header">
+			<div class="edit-page__table__header__column">
+				<span>név</span>
+				<div class="edit-page__table__header__column__sort">
+					<icon-chevron
+						(click)="sortByProperty('name', 'up')"
+					></icon-chevron>
+					<icon-chevron
+						(click)="sortByProperty('name', 'down')"
+					></icon-chevron>
+				</div>
+			</div>
+			<div class="edit-page__table__header__column">
+				<span>oldal</span>
+				<div class="edit-page__table__header__column__sort">
+					<icon-chevron
+						(click)="sortByProperty('side', 'up')"
+					></icon-chevron>
+					<icon-chevron
+						(click)="sortByProperty('side', 'down')"
+					></icon-chevron>
+				</div>
+			</div>
+			<div class="edit-page__table__header__column">
+				<span>különleges erő</span>
+				<div class="edit-page__table__header__column__sort">
+					<icon-chevron
+						(click)="sortByProperty('power', 'up', true)"
+					></icon-chevron>
+					<icon-chevron
+						(click)="sortByProperty('power', 'down', true)"
+					></icon-chevron>
+				</div>
+			</div>
+			<div class="edit-page__table__header__column">
+				<span>midiklorián</span>
+				<div class="edit-page__table__header__column__sort">
+					<icon-chevron
+						(click)="sortByProperty('midichlorian', 'up', true)"
+					></icon-chevron>
+					<icon-chevron
+						(click)="sortByProperty('midichlorian', 'down', true)"
+					></icon-chevron>
+				</div>
+			</div>
+			<div class="edit-page__table__header__column"></div>
+		</div>
+		<!-- <div class="edit-page__table__queries">
+			<div class="edit-page__table__queries__container">
+				<input
+					class="textfield textfield--bordered"
+					placeholder="pl.: Darth"
+					type="text"
+				/>
+			</div>
+			<div class="edit-page__table__queries__container">
+				<input
+					class="textfield textfield--bordered"
+					placeholder="pl.: Sötét"
+					type="text"
+				/>
+			</div>
+			<div class="edit-page__table__queries__container">
+				<input
+					class="textfield textfield--bordered"
+					placeholder="pl.: Erő"
+					type="text"
+				/>
+			</div>
+			<div class="edit-page__table__queries__container">
+				<input
+					class="textfield textfield--bordered"
+					placeholder="pl.: 0"
+					type="text"
+				/>
+			</div>
+		</div> -->
+		<div
+			*ngFor="let character of characters; index as i"
+			class="edit-page__table__row"
+		>
+			<div class="edit-page__table__row__column">
+				{{ normalizeName(character.name) }}
+			</div>
+			<div class="edit-page__table__row__column">
+				{{ character.side == "DARK" ? "Sötét" : "Világos" }}
+			</div>
+			<div class="edit-page__table__row__column">
+				{{ character.force.power }}
+			</div>
+			<div class="edit-page__table__row__column">
+				{{ character.force.midichlorian }}
+			</div>
+			<div class="edit-page__table__row__column">
+				<span (click)="copyRow(i)">Másolás</span>
+				<span (click)="modifyRow(i)">Módosítás</span>
+				<span (click)="deleteRow(i)">Törlés</span>
+			</div>
+		</div>
+	</div>
+</section>

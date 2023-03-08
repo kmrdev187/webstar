@@ -1,0 +1,39 @@
+.dropdown {
+    position: relative;
+    display: flex;
+    border: 1px solid var(--dark-gray);
+    border-radius: .5rem;
+    padding: 10px;
+
+    .rotate {
+        transform: rotate(180deg);
+    }
+    
+    icon-chevron {
+        color: var(--gray);
+        margin-left: auto;
+        cursor: pointer;
+        transition: transform .2s ease;
+    }
+
+    &__menu {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        right: 0;
+        background-color: var(--white);
+        padding: 8px 0;
+        border: 1px solid var(--gray);
+        border-radius: .5rem;
+        z-index: 2;
+
+        &__item {
+            padding: 0 .5rem;
+            cursor: pointer;
+
+            &--selected {
+                color: var(--yellow);
+            }
+        }
+    }
+}

@@ -1,0 +1,113 @@
+.modules {
+    display: flex;
+    flex-direction: column;
+    color: var(--white);
+
+    &__select-characters {
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0,0,0,.3);
+        display: grid;
+        place-content: center;
+        z-index: 2;
+
+        &__modal {
+            display: flex;
+            flex-direction: column;
+            max-width: 1200px;
+            height: max-content;
+            background-color: var(--white);
+            padding: 1rem;
+
+            &__wrapper {
+                columns: auto 2;
+                color: var(--black);
+                margin-bottom: 1rem;
+
+                &__side {      
+                    text-align: center;
+                    
+                    span {
+                        font-size: 20px;
+                        font-weight: bold;
+                    }
+
+                    &__container {
+                        display: flex;
+                        justify-content: space-evenly;
+                        row-gap: 1rem;
+                        flex-wrap: wrap;
+                        margin: 1rem 0 auto 0;
+
+                        &__item {
+                            height: 180px;
+                            width: auto;
+                            cursor: pointer;
+
+                            &--selected-dark {
+                                filter: drop-shadow(0 0 8px var(--red));
+                            }
+                            
+                            &--selected-light {
+                                filter: drop-shadow(0 0 8px var(--blue));
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__error {
+                font-size: 14px;
+                font-weight: bold;
+                color: var(--red);
+            }
+
+            &__buttons {
+                display: flex;
+                column-gap: 1rem;
+                margin-top: 2rem;
+
+                base-button {
+                    &:first-child {
+                        margin-left: auto;
+                    }
+                }
+            }
+        }
+    }
+
+    h3 {
+        font-size: 24px;
+        font-weight: 900;
+        margin-bottom: 1rem;
+    }
+
+    &__divider {
+        height: 1px;
+        width: 100%;
+        background-color: var(--white);
+        margin: 1rem 0;
+    }
+
+    &__columns {
+        display: flex;
+
+        &__1 {
+            display: block;
+            width: 10rem;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        &__2 {
+            display: flex;
+            flex-direction: column;
+
+            &__buttons {
+                margin-top: 1rem;
+                display: flex;
+                column-gap: 1rem;
+            }
+        }
+    }
+}

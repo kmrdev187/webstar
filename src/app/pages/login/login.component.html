@@ -1,0 +1,13 @@
+<section class="login-page">
+    <h2>Webstar</h2>
+    <h1>Frontend</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+        <p *ngIf="loginError">{{ loginError }}</p>
+        <label for="login-username">Felhasználónév</label>
+        <input class="textfield textfield--text-center" id="login-username" formControlName="username" type="text" autocomplete="username">
+        <label for="login-password">Jelszó</label>
+        <input class="textfield textfield--text-center" id="login-password" formControlName="password" type="password" autocomplete="current-password">
+        <base-button type="submit" variant="primary">Belépés</base-button>
+    </form>
+    <p class="copyright">Webstar Csoport Kft. - © Minden jog fenntartva</p>
+</section>

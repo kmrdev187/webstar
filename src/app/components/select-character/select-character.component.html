@@ -1,0 +1,21 @@
+<div class="select-character">
+    <div class="select-character__pagination">
+        <div class="select-character__pagination__bullets">
+            <span *ngFor="let char of characters; index as i" [class]="['select-character__pagination__bullets__bullet', i == selectedIndex && 'select-character__pagination__bullets__bullet--active']"></span>
+        </div>
+        <div class="select-character__pagination__arrows">
+            <div (click)="stepBack()" class="select-character__pagination__arrows__left"></div>
+            <div (click)="stepForward()" class="select-character__pagination__arrows__right"></div>
+        </div>
+    </div>
+    <div class="select-character__preview">
+        <div class="select-character__preview__bg-circle"></div>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide extend-slide" *ngFor="let char of characters" >
+                    <img [src]="'/assets/images/characters/' + char.id + '.png'" [alt]="char.id + 'avatar'">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

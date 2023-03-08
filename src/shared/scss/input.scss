@@ -1,0 +1,26 @@
+.textfield {
+    appearance: none;
+    outline: 0;
+    border: 0;
+    border-radius: .5rem;
+    padding: 10px;
+    width: 100%;
+
+    &--text-center {
+        text-align: center;
+    }
+
+    &--bordered {
+        border: 1px solid var(--dark-gray);
+    }
+}
+
+.textarea {
+    appearance: none;
+    resize: none;
+    outline: none;
+    border: 1px solid var(--dark-gray);
+    border-radius: .5rem;
+    height: 130px;
+    padding: 10px;
+}

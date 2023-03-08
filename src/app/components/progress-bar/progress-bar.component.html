@@ -1,0 +1,19 @@
+<div class="progress">
+	<div
+		[class]="[
+			'progress__inner',
+			type == 'light' ? 'progress__inner--light' : 'progress__inner--dark'
+		]"
+	>
+		<span
+			[class]="[
+				'progress__inner__value',
+				type == 'light'
+					? 'progress__inner__value--light'
+					: 'progress__inner__value--dark'
+			]"
+			[style.width]="value + '%'"
+		></span>
+	</div>
+	<span class="progress__percent" [style]="type == 'light' ? {marginLeft: 100-value + '%'} : {marginLeft: value + '%'}">{{ value }}%</span>
+</div>

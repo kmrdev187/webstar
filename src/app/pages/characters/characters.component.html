@@ -1,0 +1,20 @@
+<section class="characters-page">
+    <ng-template [ngIf]="selectedCharacter !== null">
+        <div class="characters-page__wrapper">
+            <div class="characters-page__wrapper__character-details">
+                <character-details [side]="selectedCharacter.side" [power]="selectedCharacter.force.power"></character-details>
+                <div class="characters-page__wrapper__character-details__bio">
+                    <h1 [innerHTML]="selectedCharacter.name"></h1>
+                    <h2>{{ selectedCharacter.description }}</h2>
+                </div>
+                <modules [characters]="characters"></modules>
+            </div>
+            <div class="characters-page__wrapper__select-character">
+                <select-character (charactesChange)="handleChange($event)" [characters]="characters"></select-character>
+            </div>
+        </div>
+    </ng-template>
+    <!-- <ng-template #elseBlock>
+        loading
+    </ng-template> -->
+</section>

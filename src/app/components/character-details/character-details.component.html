@@ -1,0 +1,16 @@
+<div class="character-details">
+    <div class="character-details__side">
+        <div [class]="['character-details__side__icon', side == 'DARK' ? 'character-details__side__icon--dark' : 'character-details__side__icon--light']"></div>
+        <div class="character-details__side__text">
+            <span>oldal</span>
+            <span>{{ side == 'DARK' ? 'Sötét' : 'Világos' }}</span>
+        </div>
+    </div>
+    <div class="character-details__force">
+        <div class="character-details__force__icon"></div>
+        <div class="character-details__force__text">
+            <span>különleges erő</span>
+            <span>{{ power }}</span>
+        </div>
+    </div>
+</div>

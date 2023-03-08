@@ -1,0 +1,7 @@
+<div role="listbox" class="dropdown">
+    <span>{{ selected }}</span>
+    <icon-chevron [class]="show ? 'rotate' : ''" (click)="show = !show" />
+    <ul *ngIf="show" class="dropdown__menu">
+        <li (click)="select(option)" *ngFor="let option of options" [class]="['dropdown__menu__item', selected == option && 'dropdown__menu__item--selected']">{{ option }}</li>
+    </ul>
+</div>
