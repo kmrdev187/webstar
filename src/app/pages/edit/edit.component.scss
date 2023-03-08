@@ -4,164 +4,164 @@ $col3: 230px;
 $col4: 200px;
 
 .edit-page {
-    color: var(--white);
+	color: var(--white);
 
-    &__nav {
-        display: flex;
-        align-items: center;
-        margin: 1rem 0;
+	&__nav {
+		display: flex;
+		align-items: center;
+		margin: 1rem 0;
 
-        base-button {
-            margin-left: auto;
-        }
+		base-button {
+			margin-left: auto;
+		}
 
-        &__back {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: var(--white);
-            font-weight: 900;
-            font-size: 24px;
+		&__back {
+			display: flex;
+			align-items: center;
+			text-decoration: none;
+			color: var(--white);
+			font-weight: 900;
+			font-size: 24px;
 
-            icon-chevron {
-                transform: rotate(90deg);
-                margin-right: 1.5rem;
-            }
-        }
-    }
+			icon-chevron {
+				transform: rotate(90deg);
+				margin-right: 1.5rem;
+			}
+		}
+	}
 
-    &__table {
-        display: flex;
-        flex-direction: column;
+	&__table {
+		display: flex;
+		flex-direction: column;
 
-        &__header {
-            display: flex;
-            padding: 8px 1rem;
-            border-bottom: 1px solid var(--yellow);
+		&__header {
+			display: flex;
+			padding: 8px 1rem;
+			border-bottom: 1px solid var(--yellow);
 
-            &__column {
-                display: flex;
-                align-items: center;
+			&__column {
+				display: flex;
+				align-items: center;
 
-                &:nth-of-type(1) {
-                    width: $col1;
-                }
-                &:nth-of-type(2) {
-                    width: $col2;
-                }
-                &:nth-of-type(3) {
-                    width: $col3;
-                }
-                &:nth-of-type(4) {
-                    width: $col4;
-                }
-                &:nth-of-type(5) {
-                    flex: 1;
-                }
+				&:nth-of-type(1) {
+					width: $col1;
+				}
+				&:nth-of-type(2) {
+					width: $col2;
+				}
+				&:nth-of-type(3) {
+					width: $col3;
+				}
+				&:nth-of-type(4) {
+					width: $col4;
+				}
+				&:nth-of-type(5) {
+					flex: 1;
+				}
 
-                span {
-                    font-weight: bold;
-                    text-transform: uppercase;
-                }
+				span {
+					font-weight: bold;
+					text-transform: uppercase;
+				}
 
-                &__sort {
-                    display: flex;
-                    align-items: center;
-                    margin-left: 1rem;
+				&__sort {
+					display: flex;
+					align-items: center;
+					margin-left: 1rem;
 
-                    icon-chevron {
-                        cursor: pointer;
-                        color: var(--gray);
+					icon-chevron {
+						cursor: pointer;
+						color: var(--gray);
 
-                        &:hover {
-                            color: var(--yellow);
-                        }
+						&:hover {
+							color: var(--yellow);
+						}
 
-                        &:first-child {
-                            transform: rotate(180deg);
-                            margin-right: .5rem;
-                        }
-                    }
-                }
-            }
-        }
+						&:first-child {
+							transform: rotate(180deg);
+							margin-right: 0.5rem;
+						}
+					}
+				}
+			}
+		}
 
-        &__queries {
-            display: flex;
-            padding: 8px 0;
+		&__queries {
+			display: flex;
+			padding: 8px 0;
 
-            &__container {
-                display: flex;
+			&__container {
+				display: flex;
 
-                &:nth-of-type(1) {
-                    width: $col1;
-                }
-                &:nth-of-type(2) {
-                    width: $col2;
-                }
-                &:nth-of-type(3) {
-                    width: $col3;
-                }
-                &:nth-of-type(4) {
-                    width: $col4;
-                }
+				&:nth-of-type(1) {
+					width: $col1;
+				}
+				&:nth-of-type(2) {
+					width: $col2;
+				}
+				&:nth-of-type(3) {
+					width: $col3;
+				}
+				&:nth-of-type(4) {
+					width: $col4;
+				}
 
-                input {
-                    margin: 0 10px;
-                }
-            }
-        }
+				input {
+					margin: 0 10px;
+				}
+			}
+		}
 
-        &__row {
-            display: flex;
-            padding: 8px 1rem;
+		&__row {
+			display: flex;
+			padding: 8px 1rem;
 
-            &:hover {
-                background-color: rgba(0,0,0,.5);
-            }
+			&:hover {
+				background-color: rgba(0, 0, 0, 0.5);
+			}
 
-            &:hover &__column:nth-of-type(5) span {
-                visibility: visible;
-            }
+			&:hover &__column:nth-of-type(5) span {
+				visibility: visible;
+			}
 
-            &:not(:nth-of-type(2)) {
-                border-top: 1px solid var(--gray);
-            }
+			&:not(:nth-of-type(2)) {
+				border-top: 1px solid var(--gray);
+			}
 
-            &__column {
-                &:nth-of-type(1) {
-                    width: $col1;
-                }
-                &:nth-of-type(2) {
-                    width: $col2;
-                }
-                &:nth-of-type(3) {
-                    width: $col3;
-                }
-                &:nth-of-type(4) {
-                    width: $col4;
-                }
-                &:nth-of-type(5) {
-                    display: flex;
-                    justify-content: center;
-                    flex: 1;
-                    column-gap: 2rem;
+			&__column {
+				&:nth-of-type(1) {
+					width: $col1;
+				}
+				&:nth-of-type(2) {
+					width: $col2;
+				}
+				&:nth-of-type(3) {
+					width: $col3;
+				}
+				&:nth-of-type(4) {
+					width: $col4;
+				}
+				&:nth-of-type(5) {
+					display: flex;
+					justify-content: center;
+					flex: 1;
+					column-gap: 2rem;
 
-                    span {
-                        font-weight: bold;
-                        cursor: pointer;
-                        visibility: hidden;
+					span {
+						font-weight: bold;
+						cursor: pointer;
+						visibility: hidden;
 
-                        &:nth-of-type(2) {
-                            color: var(--yellow);
-                        }
+						&:nth-of-type(2) {
+							color: var(--yellow);
+						}
 
-                        &:nth-of-type(3) {
-                            color: var(--red);
-                        }
-                    }
-                }
-            }
-        }
-    }
+						&:nth-of-type(3) {
+							color: var(--red);
+						}
+					}
+				}
+			}
+		}
+	}
 }

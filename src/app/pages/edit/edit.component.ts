@@ -12,37 +12,37 @@ export class EditComponent {
 	constructor(private characterService: CharacterService) {}
 
 	characters: Character[] = [];
-    queriedCharacters: Character[] = []
-    showEdit = false
-    characterForEdit: Character | null = null;
-    selectedCharacterIndex: number = 0;
+	queriedCharacters: Character[] = [];
+	showEdit = false;
+	characterForEdit: Character | null = null;
+	selectedCharacterIndex: number = 0;
 
-    nameQuery: string = ''
+	nameQuery: string = '';
 
 	normalizeName = _normalizeName;
 
-    handleCharacterChange(event: characterChangeEvent) {
-        if(event.index !== -1) {
-            this.characters[event.index] = event.character
-        } else {
-            this.characters.push(event.character);
-        }
-    }
+	handleCharacterChange(event: characterChangeEvent) {
+		if (event.index !== -1) {
+			this.characters[event.index] = event.character;
+		} else {
+			this.characters.push(event.character);
+		}
+	}
 
-    filterName() {
-        if(this.nameQuery != '') {
-            this.queriedCharacters = this.characters.filter(c => {
-                return c.name.match(new RegExp(this.nameQuery, 'gi')) !== null
-            })
-        } else {
-            this.queriedCharacters = []
-        }
-    }
+	filterName() {
+		if (this.nameQuery != '') {
+			this.queriedCharacters = this.characters.filter((c) => {
+				return c.name.match(new RegExp(this.nameQuery, 'gi')) !== null;
+			});
+		} else {
+			this.queriedCharacters = [];
+		}
+	}
 
-    createCharacter() {
-        this.showEdit = true
-        this.selectedCharacterIndex = -1
-    }
+	createCharacter() {
+		this.showEdit = true;
+		this.selectedCharacterIndex = -1;
+	}
 
 	copyRow(index: number) {
 		const copy = this.characters[index];
@@ -50,10 +50,10 @@ export class EditComponent {
 	}
 
 	modifyRow(index: number) {
-        this.showEdit = true
-        this.characterForEdit = this.characters[index]
-        this.selectedCharacterIndex = index
-    }
+		this.showEdit = true;
+		this.characterForEdit = this.characters[index];
+		this.selectedCharacterIndex = index;
+	}
 
 	deleteRow(index: number) {
 		this.characters.splice(index, 1);

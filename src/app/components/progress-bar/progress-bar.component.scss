@@ -1,42 +1,42 @@
 .progress {
-    display: flex;
-    flex-direction: column;
-    width: max-content;
+	display: flex;
+	flex-direction: column;
+	width: max-content;
 
-    &__inner {
-        border-radius: 4px;
-        width: 400px;
-        height: 20px;
-        background-color: var(--white);
-        
-        &--light {
-            transform: scaleX(-1);
-        }
-        
-        &__value {
-            display: block;
-            border-radius: 4px;
-            height: 100%;
-            transition: width .3s ease-in;
+	&__inner {
+		border-radius: 4px;
+		width: 400px;
+		height: 20px;
+		background-color: var(--white);
 
-            &--light {
-                background-color: var(--yellow);
-            }
+		&--light {
+			transform: scaleX(-1);
+		}
 
-            &--dark {
-                background-color: var(--red);
-            }
-        }
-    }
+		&__value {
+			display: block;
+			border-radius: 4px;
+			height: 100%;
+			transition: width 0.3s ease-in;
 
-    &__percent {
-        display: block;
-        color: var(--white);
-        width: max-content;
-        transform: translateX(-50%);
-        transition: margin .3s ease-in;
-        font-weight: bold;
-        font-size: 24px;
-        margin-top: 1rem;
-    }
+			&--light {
+				background-color: var(--yellow);
+			}
+
+			&--dark {
+				background-color: var(--red);
+			}
+		}
+	}
+
+	&__percent {
+		display: block;
+		color: var(--white);
+		width: max-content;
+		transform: translateX(-50%);
+		transition: margin 0.3s ease-in;
+		font-weight: bold;
+		font-size: 24px;
+		margin-top: 1rem;
+	}
 }

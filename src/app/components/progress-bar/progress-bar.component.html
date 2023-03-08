@@ -15,5 +15,13 @@
 			[style.width]="value + '%'"
 		></span>
 	</div>
-	<span class="progress__percent" [style]="type == 'light' ? {marginLeft: 100-value + '%'} : {marginLeft: value + '%'}">{{ value }}%</span>
+	<span
+		class="progress__percent"
+		[style]="
+			type == 'light'
+				? { marginLeft: 100 - value + '%' }
+				: { marginLeft: value + '%' }
+		"
+		>{{ value }}%</span
+	>
 </div>

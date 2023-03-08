@@ -9,7 +9,10 @@ import { Router } from '@angular/router';
 	styleUrls: ['./modules.component.scss'],
 })
 export class ModulesComponent {
-	constructor(private simulateService: SimulateService, private router: Router) {}
+	constructor(
+		private simulateService: SimulateService,
+		private router: Router
+	) {}
 
 	@Input() characters: Character[] = [];
 
@@ -21,22 +24,22 @@ export class ModulesComponent {
 
 	showModal: boolean = false;
 
-    error: string = ''
+	error: string = '';
 
-    showCharacterModal() {
-        this.showModal = true
-        this.error = ''
-        this.selectedDark = null
-        this.selectedLight = null
-    }
+	showCharacterModal() {
+		this.showModal = true;
+		this.error = '';
+		this.selectedDark = null;
+		this.selectedLight = null;
+	}
 
-    selectCharacters() {
-        if(this.selectedLight && this.selectedDark) {
-            this.showModal = false
-        } else {
-            this.error = 'Válassz mind a két oldalról egy karaktert!'
-        }
-    }
+	selectCharacters() {
+		if (this.selectedLight && this.selectedDark) {
+			this.showModal = false;
+		} else {
+			this.error = 'Válassz mind a két oldalról egy karaktert!';
+		}
+	}
 
 	simulate() {
 		if (this.selectedLight && this.selectedDark) {
@@ -45,7 +48,14 @@ export class ModulesComponent {
 				.subscribe({
 					next: (res) => {
 						// console.log(res);
-                        this.router.navigate(['/fight'], { queryParams: { lid: this.selectedLight?.id, did: this.selectedDark?.id, lname: this.selectedLight?.name, dname: this.selectedDark?.name } })
+						this.router.navigate(['/fight'], {
+							queryParams: {
+								lid: this.selectedLight?.id,
+								did: this.selectedDark?.id,
+								lname: this.selectedLight?.name,
+								dname: this.selectedDark?.name,
+							},
+						});
 					},
 					error: (err) => {
 						console.log(err);

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from  '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,32 +22,32 @@ import { EditCharacterComponent } from './components/edit-character/edit-charact
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    CharactersComponent,
-    BaseButtonComponent,
-    BaseLayoutComponent,
-    IconChevronComponent,
-    IconLogoutComponent,
-    IconUserComponent,
-    SelectCharacterComponent,
-    CharacterDetailsComponent,
-    ModulesComponent,
-    FightComponent,
-    ProgressBarComponent,
-    EditComponent,
-    EditCharacterComponent,
-    DropdownComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		LoginComponent,
+		CharactersComponent,
+		BaseButtonComponent,
+		BaseLayoutComponent,
+		IconChevronComponent,
+		IconLogoutComponent,
+		IconUserComponent,
+		SelectCharacterComponent,
+		CharacterDetailsComponent,
+		ModulesComponent,
+		FightComponent,
+		ProgressBarComponent,
+		EditComponent,
+		EditCharacterComponent,
+		DropdownComponent,
+	],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		FormsModule,
+		ReactiveFormsModule,
+		HttpClientModule,
+	],
+	providers: [],
+	bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

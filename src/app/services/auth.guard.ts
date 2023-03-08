@@ -16,12 +16,12 @@ export class AuthGuard implements CanActivateChild {
 		childRoute: ActivatedRouteSnapshot,
 		state: RouterStateSnapshot
 	): boolean {
-        const cookie = getCookieByName('token')
-        if(cookie) {
-            return true
-        } else {
-            this.router.navigate(['/login'])
-            return false
-        }
+		const cookie = getCookieByName('token');
+		if (cookie) {
+			return true;
+		} else {
+			this.router.navigate(['/login']);
+			return false;
+		}
 	}
 }

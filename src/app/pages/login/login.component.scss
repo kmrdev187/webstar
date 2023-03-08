@@ -1,52 +1,52 @@
 .login-page {
-    display: grid;
-    place-content: center;
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url('/assets/images/bg_1.jpg');
-    text-align: center;
+	display: grid;
+	place-content: center;
+	height: 100vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-image: url("/assets/images/bg_1.jpg");
+	text-align: center;
 
-    h2 {
-        font-family: 'Starjedi';
-        font-size: 30px;
-        color: var(--white);
-        margin-bottom: 44px;
-    }
+	h2 {
+		font-family: "Starjedi";
+		font-size: 30px;
+		color: var(--white);
+		margin-bottom: 44px;
+	}
 
-    h1 {
-        font-family: 'DistantGalaxy';
-        font-size: 70px;
-        font-weight: 400;
-        color: var(--white);
-        margin-bottom: 68px;
-    }
+	h1 {
+		font-family: "DistantGalaxy";
+		font-size: 70px;
+		font-weight: 400;
+		color: var(--white);
+		margin-bottom: 68px;
+	}
 
-    .login-form {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        padding: 18px;
+	.login-form {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		padding: 18px;
 
-        p {
-            color: var(--red);
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
+		p {
+			color: var(--red);
+			font-weight: 600;
+			margin-bottom: 1rem;
+		}
 
-        label {
-            font-weight: bold;
-            font-size: 14px;
-            color: var(--white);
-            margin-bottom: 4px;
-        }
+		label {
+			font-weight: bold;
+			font-size: 14px;
+			color: var(--white);
+			margin-bottom: 4px;
+		}
 
-        input {
-            margin-bottom: 20px;
+		input {
+			margin-bottom: 20px;
 
-            &[type="password"]{
-                margin-bottom: 42px;
-            }
-        }
-    }
+			&[type="password"] {
+				margin-bottom: 42px;
+			}
+		}
+	}
 }

@@ -1,14 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
-@import './shared/scss/fonts.scss';
-@import './shared/scss/colors.scss';
-@import './shared/scss/input.scss';
-@import './shared/scss/reset.scss';
-@import 'swiper/css';
+@import "./shared/scss/fonts.scss";
+@import "./shared/scss/colors.scss";
+@import "./shared/scss/input.scss";
+@import "./shared/scss/reset.scss";
+@import "swiper/css";
 
 .copyright {
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-    color: var(--white);
-    font-size: 14px;
+	position: fixed;
+	bottom: 1rem;
+	right: 1rem;
+	color: var(--white);
+	font-size: 14px;
 }

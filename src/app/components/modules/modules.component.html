@@ -49,11 +49,19 @@
 					</div>
 				</div>
 			</div>
-            <p *ngIf="error" class="modules__select-characters__modal__error">{{ error }}</p>
-            <div class="modules__select-characters__modal__buttons">
-                <base-button variant="secondary-black" (click)="showModal = false">Mégsem</base-button>
-                <base-button (click)="selectCharacters()">Kiválasztás</base-button>
-            </div>
+			<p *ngIf="error" class="modules__select-characters__modal__error">
+				{{ error }}
+			</p>
+			<div class="modules__select-characters__modal__buttons">
+				<base-button
+					variant="secondary-black"
+					(click)="showModal = false"
+					>Mégsem</base-button
+				>
+				<base-button (click)="selectCharacters()"
+					>Kiválasztás</base-button
+				>
+			</div>
 		</div>
 	</section>
 

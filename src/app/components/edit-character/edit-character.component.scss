@@ -1,98 +1,97 @@
 .edit-character {
-    position: fixed;
-    inset: 0;
-    display: flex;
-    justify-content: flex-end;
-    background-color: rgba(0,0,0,.3);
-    color: var(--black);
-    z-index: 3;
+	position: fixed;
+	inset: 0;
+	display: flex;
+	justify-content: flex-end;
+	background-color: rgba(0, 0, 0, 0.3);
+	color: var(--black);
+	z-index: 3;
 
-    &__form {
-        display: flex;
-        flex-direction: column;
-        padding: 2rem;
-        height: 100%;
-        width: 500px;
-        background-color: var(--white);
-        row-gap: 1rem;
+	&__form {
+		display: flex;
+		flex-direction: column;
+		padding: 2rem;
+		height: 100%;
+		width: 500px;
+		background-color: var(--white);
+		row-gap: 1rem;
 
-        p {
-            font-size: 14px;
-            font-weight: bold;
-        }
+		p {
+			font-size: 14px;
+			font-weight: bold;
+		}
 
-        span {
-            font-size: 24px;
-            font-weight: 900;
-        }
+		span {
+			font-size: 24px;
+			font-weight: 900;
+		}
 
-        &__close {
-            margin-left: auto;
-            color: var(--gray);
-            cursor: pointer;
-        }
+		&__close {
+			margin-left: auto;
+			color: var(--gray);
+			cursor: pointer;
+		}
 
-        &__avatars {
-            display: flex;
-            overflow-x: scroll;
+		&__avatars {
+			display: flex;
+			overflow-x: scroll;
 
-            &__container {
-                position: relative;
-                    
-                &__avatar {
-                    position: relative;
-                    height: 100px;
-                    width: auto;    
-                    z-index: 1;
-                    cursor: pointer;
-                }
+			&__container {
+				position: relative;
 
-                &--selected::after {
-                    position: absolute;
-                    content: '';
-                    width: 60px;
-                    height: 60px;
-                    top: 10px;
-                    right: 10px;
-                    border-radius: 50%;
-                    background-color: var(--yellow);
-                }
-            }
+				&__avatar {
+					position: relative;
+					height: 100px;
+					width: auto;
+					z-index: 1;
+					cursor: pointer;
+				}
 
-        }
+				&--selected::after {
+					position: absolute;
+					content: "";
+					width: 60px;
+					height: 60px;
+					top: 10px;
+					right: 10px;
+					border-radius: 50%;
+					background-color: var(--yellow);
+				}
+			}
+		}
 
-        &__inputs {
-            display: flex;
-            column-gap: 1rem;
+		&__inputs {
+			display: flex;
+			column-gap: 1rem;
 
-            &__container {
-                display: flex;
-                flex-direction: column;
+			&__container {
+				display: flex;
+				flex-direction: column;
 
-                input {
-                    width: unset;
-                }
+				input {
+					width: unset;
+				}
 
-                &:first-child {
-                    flex: 1;
-                }
+				&:first-child {
+					flex: 1;
+				}
 
-                &:last-child {
-                    width: 130px;
-                }
-            }
-        }
+				&:last-child {
+					width: 130px;
+				}
+			}
+		}
 
-        &__error {
-            color: var(--red);
-        }
+		&__error {
+			color: var(--red);
+		}
 
-        &__buttons {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            column-gap: 2rem;
-            // margin-top: auto;
-        }
-    }
+		&__buttons {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			column-gap: 2rem;
+			// margin-top: auto;
+		}
+	}
 }

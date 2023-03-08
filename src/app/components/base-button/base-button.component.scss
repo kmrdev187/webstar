@@ -1,32 +1,32 @@
 :host {
-    max-width: 250px;
-    width: 100%;
+	max-width: 250px;
+	width: 100%;
 }
 
 .base-button {
-    appearance: none;
-    font-family: 'Poppins';
-    font-weight: bold;
-    border: 0;
-    border-radius: .5rem;
-    padding: 10px .5rem;
-    width: 100%;
-    white-space: nowrap;
-    cursor: pointer;
-    
-    &--primary {
-        background-color: var(--yellow);
-    }
+	appearance: none;
+	font-family: "Poppins";
+	font-weight: bold;
+	border: 0;
+	border-radius: 0.5rem;
+	padding: 10px 0.5rem;
+	width: 100%;
+	white-space: nowrap;
+	cursor: pointer;
 
-    &--secondary {
-        background-color: transparent;
-        color: var(--white);
-        border: 2px solid var(--yellow);
-    }
+	&--primary {
+		background-color: var(--yellow);
+	}
 
-    &--secondary-black {
-        background-color: transparent;
-        color: var(--black);
-        border: 2px solid var(--yellow);
-    }
+	&--secondary {
+		background-color: transparent;
+		color: var(--white);
+		border: 2px solid var(--yellow);
+	}
+
+	&--secondary-black {
+		background-color: transparent;
+		color: var(--black);
+		border: 2px solid var(--yellow);
+	}
 }

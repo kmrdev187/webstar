@@ -9,10 +9,14 @@ export class CharacterService {
 	private baseUrl =
 		'https://developer.webstar.hu/rest/frontend-felveteli/v2/characters/';
 
-        constructor(private http: HttpClient) { }
+	constructor(private http: HttpClient) {}
 
-        getCharacters() {
-            const headers = new HttpHeaders({'Content-Type': 'application/json', 'Applicant-Id' : 'fcQHRW85', 'Application-Authorization': `Bearer ${getCookieByName('token')}`})
-            return this.http.get(this.baseUrl, {headers})
-        }
+	getCharacters() {
+		const headers = new HttpHeaders({
+			'Content-Type': 'application/json',
+			'Applicant-Id': 'fcQHRW85',
+			'Application-Authorization': `Bearer ${getCookieByName('token')}`,
+		});
+		return this.http.get(this.baseUrl, { headers });
+	}
 }

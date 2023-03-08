@@ -1,55 +1,96 @@
 <section *ngIf="show" class="edit-character">
 	<div class="edit-character__form">
 		<svg
-            (click)="showChange.emit(false)"
+			(click)="showChange.emit(false)"
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 26 26"
 			width="26px"
 			height="26px"
-            class="edit-character__form__close"
-            fill="currentColor"
-            >
+			class="edit-character__form__close"
+			fill="currentColor"
+		>
 			<path
 				d="M 21.734375 19.640625 L 19.636719 21.734375 C 19.253906 22.121094 18.628906 22.121094 18.242188 21.734375 L 13 16.496094 L 7.761719 21.734375 C 7.375 22.121094 6.746094 22.121094 6.363281 21.734375 L 4.265625 19.640625 C 3.878906 19.253906 3.878906 18.628906 4.265625 18.242188 L 9.503906 13 L 4.265625 7.761719 C 3.882813 7.371094 3.882813 6.742188 4.265625 6.363281 L 6.363281 4.265625 C 6.746094 3.878906 7.375 3.878906 7.761719 4.265625 L 13 9.507813 L 18.242188 4.265625 C 18.628906 3.878906 19.257813 3.878906 19.636719 4.265625 L 21.734375 6.359375 C 22.121094 6.746094 22.121094 7.375 21.738281 7.761719 L 16.496094 13 L 21.734375 18.242188 C 22.121094 18.628906 22.121094 19.253906 21.734375 19.640625 Z"
 			/>
 		</svg>
-        <span>{{ index !== -1 ? 'Karakter szerkesztése' : 'Karakter létrehozása'}}</span>
-        <p>Avatár kiválasztása</p>
-        <div class="edit-character__form__avatars">
-            <div (click)="selectedAvatar = char.id" [class]="['edit-character__form__avatars__container', char.id == selectedAvatar && 'edit-character__form__avatars__container--selected']" *ngFor="let char of characters">
-                <img class="edit-character__form__avatars__container__avatar" [src]="'/assets/images/characters/' + char.id + '.png'" [alt]="char.name">
-            </div>
-        </div>
-        <div class="edit-character__form__inputs">
-            <div class="edit-character__form__inputs__container">
-                <p>Név</p>
-                <input [(ngModel)]="selectedName" class="textfield textfield--bordered" type="text" placeholder="pl.: C3PO">
-            </div>
-            <div class="edit-character__form__inputs__container">
-                <p>Oldal</p>
-                <dropdown [(selected)]="selectedSide" [options]="availableSides" />
-            </div>
-        </div>
-        <div class="edit-character__form__inputs">
-            <div class="edit-character__form__inputs__container">
-                <p>Különleges erő</p>
-                <dropdown [(selected)]="selectedPower" [options]="availablePowers" />
-            </div>
-            <div class="edit-character__form__inputs__container">
-                <p>Midikloriánok</p>
-                <input [(ngModel)]="selectedMidichlorian" (keydown)="handleKeydown($event)" class="textfield textfield--bordered" type="number" placeholder="0">
-            </div>
-        </div>
-        <div class="edit-character__form__inputs">
-            <div class="edit-character__form__inputs__container">
-                <p>Leírás</p>
-                <textarea [(ngModel)]="selectedDescription" class="textarea" placeholder="C3PO az aranyember"></textarea>
-            </div>
-        </div>
-        <p *ngIf="validationError" class="edit-character__form__error">{{ validationError }}</p>
-        <div class="edit-character__form__buttons">
-            <base-button (click)="showChange.emit(false)" variant="secondary-black">Mégsem</base-button>
-            <base-button (click)="save()">Mentés</base-button>
-        </div>
+		<span>{{
+			index !== -1 ? "Karakter szerkesztése" : "Karakter létrehozása"
+		}}</span>
+		<p>Avatár kiválasztása</p>
+		<div class="edit-character__form__avatars">
+			<div
+				(click)="selectedAvatar = char.id"
+				[class]="[
+					'edit-character__form__avatars__container',
+					char.id == selectedAvatar &&
+						'edit-character__form__avatars__container--selected'
+				]"
+				*ngFor="let char of characters"
+			>
+				<img
+					class="edit-character__form__avatars__container__avatar"
+					[src]="'/assets/images/characters/' + char.id + '.png'"
+					[alt]="char.name"
+				/>
+			</div>
+		</div>
+		<div class="edit-character__form__inputs">
+			<div class="edit-character__form__inputs__container">
+				<p>Név</p>
+				<input
+					[(ngModel)]="selectedName"
+					class="textfield textfield--bordered"
+					type="text"
+					placeholder="pl.: C3PO"
+				/>
+			</div>
+			<div class="edit-character__form__inputs__container">
+				<p>Oldal</p>
+				<dropdown
+					[(selected)]="selectedSide"
+					[options]="availableSides"
+				/>
+			</div>
+		</div>
+		<div class="edit-character__form__inputs">
+			<div class="edit-character__form__inputs__container">
+				<p>Különleges erő</p>
+				<dropdown
+					[(selected)]="selectedPower"
+					[options]="availablePowers"
+				/>
+			</div>
+			<div class="edit-character__form__inputs__container">
+				<p>Midikloriánok</p>
+				<input
+					[(ngModel)]="selectedMidichlorian"
+					(keydown)="handleKeydown($event)"
+					class="textfield textfield--bordered"
+					type="number"
+					placeholder="0"
+				/>
+			</div>
+		</div>
+		<div class="edit-character__form__inputs">
+			<div class="edit-character__form__inputs__container">
+				<p>Leírás</p>
+				<textarea
+					[(ngModel)]="selectedDescription"
+					class="textarea"
+					placeholder="C3PO az aranyember"
+				></textarea>
+			</div>
+		</div>
+		<p *ngIf="validationError" class="edit-character__form__error">
+			{{ validationError }}
+		</p>
+		<div class="edit-character__form__buttons">
+			<base-button
+				(click)="showChange.emit(false)"
+				variant="secondary-black"
+				>Mégsem</base-button
+			>
+			<base-button (click)="save()">Mentés</base-button>
+		</div>
 	</div>
 </section>

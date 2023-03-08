@@ -1,16 +1,23 @@
-<section class="base-layout" [style.background-image]="bg2routes.includes(url) ? 'url(/assets/images/bg_2.jpg)' : 'url(/assets/images/bg_3.jpg)'" >
-    <nav class="base-layout__nav">
-        <div class="base-layout__nav__user">
-            <icon-user></icon-user>
-            <span>{{ user }}</span>
-        </div>
-        <div (click)="logout()" class="base-layout__nav__logout">
-            <span>Űrhajó elhagyása</span>
-            <icon-logout></icon-logout>
-        </div>
-    </nav>
-    <main class="base-layout__main">
-        <router-outlet></router-outlet>
-    </main>
-    <p class="copyright">Webstar Csoport Kft. - © Minden jog fenntartva</p>
+<section
+	class="base-layout"
+	[style.background-image]="
+		bg2routes.includes(url)
+			? 'url(/assets/images/bg_2.jpg)'
+			: 'url(/assets/images/bg_3.jpg)'
+	"
+>
+	<nav class="base-layout__nav">
+		<div class="base-layout__nav__user">
+			<icon-user></icon-user>
+			<span>{{ user }}</span>
+		</div>
+		<div (click)="logout()" class="base-layout__nav__logout">
+			<span>Űrhajó elhagyása</span>
+			<icon-logout></icon-logout>
+		</div>
+	</nav>
+	<main class="base-layout__main">
+		<router-outlet></router-outlet>
+	</main>
+	<p class="copyright">Webstar Csoport Kft. - © Minden jog fenntartva</p>
 </section>

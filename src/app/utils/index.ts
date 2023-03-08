@@ -14,14 +14,14 @@ export function getCookieByName(name: string) {
 }
 
 export function deleteCookie(name: string) {
-    document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC;`
+	document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC;`;
 }
 
 export function normalizeName(name: string) {
-    if(name.includes('<br>')) {
-        const parts = name.split('<br>')
-        return `${parts[0]} ${parts[1]}`
-    } else {
-        return name
-    }
+	if (name.includes('<br>')) {
+		const parts = name.split('<br>');
+		return `${parts[0]} ${parts[1]}`;
+	} else {
+		return name;
+	}
 }

@@ -1,54 +1,55 @@
 :host {
-    display: flex;
-    height: 100vh;
+	display: flex;
+	height: 100vh;
 }
 
 .base-layout {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow: hidden;
 
-    &__nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        max-width: 1160px;
-        width: 100%;
-        padding: 1.2rem 0;
-        margin: 0 auto;
-        border-bottom: 1px solid var(--white);
+	&__nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		max-width: 1160px;
+		width: 100%;
+		padding: 1.2rem 0;
+		margin: 0 auto;
+		border-bottom: 1px solid var(--white);
 
-        span {
-            font-weight: bold;
-        }
+		span {
+			font-weight: bold;
+		}
 
-        &__user, &__logout {
-            display: flex;
-            align-items: center;
-            color: var(--white);
-        }
-        
-        &__user span {
-            margin-left: 1rem;
-        }
+		&__user,
+		&__logout {
+			display: flex;
+			align-items: center;
+			color: var(--white);
+		}
 
-        &__logout {
-            cursor: pointer;
-            
-            span {
-                margin-right: 1rem;
-            }
-        }
-    }
+		&__user span {
+			margin-left: 1rem;
+		}
 
-    &__main {
-        max-width: 1160px;
-        width: 100%;
-        margin: 0 auto;
-    }
+		&__logout {
+			cursor: pointer;
+
+			span {
+				margin-right: 1rem;
+			}
+		}
+	}
+
+	&__main {
+		max-width: 1160px;
+		width: 100%;
+		margin: 0 auto;
+	}
 }

@@ -29,8 +29,11 @@ export class LoginComponent {
 			this.authService.login(username, password).subscribe({
 				next: (res: any) => {
 					// console.log(res);
-                    setCookie('token', res.token)
-                    setCookie('user', res.user.lastName + ' ' + res.user.firstName)
+					setCookie('token', res.token);
+					setCookie(
+						'user',
+						res.user.lastName + ' ' + res.user.firstName
+					);
 					this.router.navigate(['/']);
 				},
 				error: (error) => {
@@ -38,8 +41,8 @@ export class LoginComponent {
 				},
 			});
 		} else {
-            this.loginError = "Felhasználónév és jelszó megadása kötelező!"
-        }
+			this.loginError = 'Felhasználónév és jelszó megadása kötelező!';
+		}
 		this.loginForm.reset();
 	}
 }
